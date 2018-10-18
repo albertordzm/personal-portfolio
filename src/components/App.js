@@ -1,32 +1,42 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from '../styles/app.css';
 
-export default class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <Fragment>
-        <header>
-          <nav>
-
+        <header styleName="header">
+          <nav styleName="navigation">
+            <a styleName="navigation__item" href="#bio">BIO</a> |
+            <a styleName="navigation__item" href="#skills">SKILLS</a> |
+            <a styleName="navigation__item" href="#exp">EXPERIENCE</a>
           </nav>
         </header>
-        <main>
-          <h1>Alberto Rodriguez Medina | Full Stack Developer</h1>
-          <section>
+        <main styleName="main">
+          <section styleName="section">
+            <h1 styleName="title">Alberto Rodriguez Medina | Full Stack Developer</h1>
+          </section>
+          <section id="bio" styleName="section">
             Bio
           </section>
-          <section>
+          <section id="skills" styleName="section">
             Skills
           </section>
-          <section>
+          <section id="exp" styleName="section">
             Experience
           </section>
+          <footer styleName="footer">
+            <nav styleName="social">
+              <a styleName="social__item">twitter</a> |
+                <a styleName="social__item">linkedin</a> |
+                  <a styleName="social__item">github</a>
+                </nav>
+              </footer>
         </main>
-        <footer>
-          <div class="">
-            Social media
-          </div>
-        </footer>
       </Fragment>
     );
   }
 }
+
+export default CSSModules(App, styles)
