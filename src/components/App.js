@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import CSSModules from 'react-css-modules';
-import styles from '../styles/app.css';
+import styles from '../styles/app.scss';
+
+import Footer from './Footer';
+import Header from './Header';
 
 class App extends Component {
   constructor(props) {
@@ -28,21 +31,34 @@ class App extends Component {
           role: 'Web Developer',
           description: ''
         }
-      ]
+      ],
+      atTop: true,
+      atBottom: false
     }
+
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentWillMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    // console.log('Scrolling!');
+    this.setState({
+      atTop: window.scrollY === 0,
+      atBottom: (window.scrollY + window.innerHeight) === document.body.scrollHeight
+    });
   }
 
   render() {
     return (
       <Fragment>
-        <header styleName="header">
-          <nav styleName="navigation">
-            <a styleName="navigation__item" href="#home">HOME</a> |
-            <a styleName="navigation__item" href="#bio">BIO</a> |
-            <a styleName="navigation__item" href="#skills">SKILLS</a> |
-            <a styleName="navigation__item" href="#exp">EXPERIENCE</a>
-          </nav>
-        </header>
+        <Header atTop={this.state.atTop} />
         <main styleName="main">
           <section id="home" styleName="section">
             <h1 styleName="title">Alberto Rodriguez Medina | Software Developer</h1>
@@ -59,14 +75,11 @@ class App extends Component {
           <section id="exp" styleName="section">
             <h2>Experience</h2>
           </section>
-          <footer styleName="footer">
-            <nav styleName="social">
-              <a styleName="social__item">twitter</a> |
-                <a styleName="social__item">linkedin</a> |
-                  <a styleName="social__item">github</a>
-                </nav>
-              </footer>
+          <section id="contact" styleName="section">
+            <h2>Contact</h2>
+          </section>
         </main>
+        <Footer atBottom={this.state.atBottom} />
       </Fragment>
     );
   }

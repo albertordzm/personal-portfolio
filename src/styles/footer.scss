@@ -1,0 +1,31 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid black;
+  transition: all 0.2s ease;
+}
+
+.footer--hide {
+  @extend .footer;
+
+  transform: translateY(50px);
+}
+
+.footer--show {
+  @extend .footer;
+
+  transform: translateY(0);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.social__item {
+  text-decoration: none;
+}

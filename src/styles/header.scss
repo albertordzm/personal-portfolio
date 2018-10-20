@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid black;
+  transition: all 0.2s ease;
+  z-index: 9999999;
+}
+
+.header--hide {
+  @extend .header;
+
+  transform: translateY(-50px);
+}
+
+.header--show {
+  @extend .header;
+
+  transform: translateY(0);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.navigation__item {
+  text-decoration: none;
+}

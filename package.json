@@ -4,8 +4,14 @@
   "description": "My personal portfolio website",
   "main": "index.js",
   "scripts": {
+    "clean-dist": "npm run remove-dist && mkdir dist",
+    "remove-dist": "rimraf ./dist",
+    "prebuild": "npm run clean-dist",
+    "build": "webpack --config webpack.prod.js",
+    "postbuild": "babel-node ./server.js",
     "start": "webpack-dev-server --config webpack.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -18,6 +24,9 @@
   },
   "homepage": "https://github.com/albertordzm/personal-portfolio#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "gatsby": "^2.0.28",
+    "node-sass": "^4.9.4",
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
     "react-css-modules": "^4.7.7",
@@ -26,12 +35,18 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.1.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
