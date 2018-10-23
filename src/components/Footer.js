@@ -17,6 +17,9 @@ const Footer = (props) => {
         </a> |
         <a styleName="social__item" target="_blank" href="https://github.com/albertordzm">
           github
+        </a> |
+        <a styleName="social__item" href="#home">
+          return to top
         </a>
       </nav>
     </footer>
