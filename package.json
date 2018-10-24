@@ -25,7 +25,6 @@
   "homepage": "https://github.com/albertordzm/personal-portfolio#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "gatsby": "^2.0.28",
     "node-sass": "^4.9.4",
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
