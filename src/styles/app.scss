@@ -12,8 +12,6 @@ body {
   height: 100%;
 }
 
-
-
 .section {
   display: flex;
   flex-direction: column;
@@ -25,4 +23,14 @@ body {
 
 .title {
   margin: 0 auto;
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+}
+
+.bio {
+  width: 50%;
+  line-height: 2;
 }

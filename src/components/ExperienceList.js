@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 
@@ -7,21 +7,26 @@ import styles from '../styles/experience.scss';
 
 class ExperienceList extends React.Component {
   render() {
-    const { jobs } = this.props;
+    const { jobs, showJobDescription, jobDescription } = this.props;
+    const descriptionStyle = showJobDescription ? 'jobs__description--show' : 'jobs__description--hide';
 
     return (
-      <section id="exp" styleName="jobs">
-        <h2>Experience</h2>
+      <>
         <div styleName="jobs__list">
           {jobs.map((job, index) => <ExperienceItem key={index} job={job} />)}
         </div>
-      </section>
+        <div styleName={descriptionStyle}>
+          {jobDescription}
+        </div>
+      </>
     );
   }
 };
 
 ExperienceList.propTypes = {
-  jobs: PropTypes.array.isRequired
+  jobs: PropTypes.array.isRequired,
+  jobDescription: PropTypes.string,
+  showJobDescription: PropTypes.bool.isRequired
 };
 
 export default CSSModules(ExperienceList, styles);
