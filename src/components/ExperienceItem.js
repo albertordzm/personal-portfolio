@@ -22,7 +22,6 @@ class ExperienceItem extends React.Component {
 
   render() {
     const { job } = this.props;
-    let descriptionStyle = this.state.showDescription ? 'jobs__description--show' : 'jobs__description--hide';
 
     return (
       <Fragment>
@@ -31,9 +30,7 @@ class ExperienceItem extends React.Component {
           <p>{job.company}</p>
           <p>{`${job.start} - ${job.end}`}</p>
         </div>
-        <div styleName={descriptionStyle}>
-          {job.description}
-        </div>
+
       </Fragment>
     );
   }
