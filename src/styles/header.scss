@@ -7,7 +7,7 @@
   width: 100%;
   background-color: white;
   border-bottom: 1px solid black;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   z-index: 9999999;
 }
 
@@ -25,12 +25,25 @@
 
 .navigation {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
 }
 
 .navigation__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 16px;
+  height: 100%;
+  min-width: 32px;
+  color: black;
   text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: darkgray;
+    box-shadow:  0 1px 0 0 white inset, 0 -2px 0 0 darkgray inset ;
+  }
 }

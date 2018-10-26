@@ -20,7 +20,7 @@ module.exports = merge(common, {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
@@ -41,6 +41,12 @@ module.exports = merge(common, {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+          test: /\.svg$/,
+          use: {
+            loader: 'svg-inline-loader'
+          }
       }
     ]
   },

@@ -48,7 +48,9 @@ class App extends Component {
         }
       ],
       atTop: true,
-      atBottom: false
+      atBottom: false,
+      scrolling: false,
+      showJobDescription: false
     }
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -65,33 +67,55 @@ class App extends Component {
   handleScroll() {
     this.setState({
       atTop: window.scrollY === 0,
-      atBottom: (window.scrollY + window.innerHeight) === document.body.scrollHeight
+      atBottom: (window.scrollY + window.innerHeight) >= (document.body.scrollHeight - 1)
     });
   }
 
   render() {
+    const {
+      atTop,
+      atBottom,
+      experience,
+      scrolling,
+      showJobDescription
+    } = this.state;
+
     return (
       <Fragment>
-        <Header atTop={this.state.atTop} />
+        <Header atTop={atTop} scrolling={scrolling} />
         <main styleName="main">
           <section id="home" styleName="section">
-            <h1 styleName="title">Alberto Rodriguez Medina | Software Developer</h1>
+            <h1 styleName="title">Alberto Rodriguez Medina</h1>
+            <h2>Software Developer</h2>
           </section>
           <section id="bio" styleName="section">
-            <h2>Bio</h2>
-            <p>
-              Hi there!
-            </p>
+            <h2 styleName="subtitle">Bio</h2>
+            <article styleName="bio">
+              <p>
+                Hi there!
+              </p>
+              <p>
+                I'm a software engineer with 5+ years of experience in web development, working for
+                companies in diverse industries including financial, healthcare and entertainment.
+                Full stack experience with technologies like SQL Server, C#, ASP.NET Core, Node,
+                JavaScript (including libraries such as jQuery and React), SASS and Handlebars.
+
+                Love to learn new technologies and tackle interesting and challenging problems.
+              </p>
+            </article>
           </section>
           <section id="skills" styleName="section">
-            <h2>Skills</h2>
+            <h2 styleName="subtitle">Skills</h2>
           </section>
-          <ExperienceList jobs={this.state.experience} />
+          <section id="exp" styleName="section">
+            <h2 styleName="subtitle">Experience</h2>
+            <ExperienceList jobs={experience} showJobDescription={showJobDescription} />
+          </section>
           <section id="contact" styleName="section">
-            <h2>Contact</h2>
+            <h2 styleName="subtitle">Contact</h2>
           </section>
         </main>
-        <Footer atBottom={this.state.atBottom} />
+        <Footer atBottom={atBottom} scrolling={scrolling} />
       </Fragment>
     );
   }
