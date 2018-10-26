@@ -2,15 +2,15 @@ import React, { Component, Fragment } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from '../styles/app.scss';
 
-import ExperienceList from './ExperienceList';
 import Footer from './Footer';
 import Header from './Header';
+import ExperienceList from './ExperienceList';
+import SkillList from './SkillList';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      skills: ['C#', 'JavaScript', 'React', 'Azure', 'ASP.NET'],
       experience: [
         {
           company: 'Diverza',
@@ -50,10 +50,12 @@ class App extends Component {
       atTop: true,
       atBottom: false,
       scrolling: false,
-      showJobDescription: false
+      showJobDescription: false,
+      activeItem: 'home'
     }
 
     this.handleScroll = this.handleScroll.bind(this);
+    this.updateActiveItem = this.updateActiveItem.bind(this);
   }
 
   componentWillMount() {
@@ -71,8 +73,15 @@ class App extends Component {
     });
   }
 
+  updateActiveItem(newActiveItem) {
+    this.setState({
+      activeItem: newActiveItem
+    });
+  }
+
   render() {
     const {
+      activeItem,
       atTop,
       atBottom,
       experience,
@@ -82,7 +91,8 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header atTop={atTop} scrolling={scrolling} />
+        <Header atTop={atTop} scrolling={scrolling} activeItem={activeItem}
+          updateActiveItem={this.updateActiveItem} />
         <main styleName="main">
           <section id="home" styleName="section">
             <h1 styleName="title">Alberto Rodriguez Medina</h1>
@@ -104,8 +114,9 @@ class App extends Component {
               </p>
             </article>
           </section>
-          <section id="skills" styleName="section">
+          <section id="skills" styleName="section--skills">
             <h2 styleName="subtitle">Skills</h2>
+            <SkillList />
           </section>
           <section id="exp" styleName="section">
             <h2 styleName="subtitle">Experience</h2>

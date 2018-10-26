@@ -21,6 +21,12 @@ body {
   border-bottom: 1px solid black;
 }
 
+.section--skills {
+  @extend .section;
+
+  justify-content: space-around;
+}
+
 .title {
   margin: 0 auto;
   font-size: 2rem;
