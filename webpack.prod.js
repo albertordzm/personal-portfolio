@@ -49,6 +49,12 @@ module.exports = merge(common, {
             loader: 'sass-loader'
           }
         ]
+      },
+      {
+          test: /\.svg$/,
+          use: {
+            loader: 'svg-inline-loader'
+          }
       }
     ]
   }
