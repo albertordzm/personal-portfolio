@@ -1,14 +1,15 @@
 .jobs {
-  composes: section from './app.scss';
+  composes: section from '../app.scss';
 }
 
 .jobs__list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  width: 66%;
+  height: 66%;
+  width: 50%;
 }
 
 .jobs__item {
@@ -16,7 +17,7 @@
   flex-direction: column;
   margin: 4px 0;
   padding: 4px;
-  width: 250px;
+  width: 200px;
   border: 1px solid darkgray;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -29,6 +30,11 @@
 
 .jobs__title {
   margin: 0;
+}
+
+.jobs__company,
+.jobs__duration {
+  margin: 4px 0;
 }
 
 .jobs__description {
