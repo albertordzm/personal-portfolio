@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 
-import styles from '../styles/experience.scss';
+import styles from './experience.scss';
 
 class ExperienceItem extends React.Component {
   constructor(props) {
@@ -27,8 +27,8 @@ class ExperienceItem extends React.Component {
       <Fragment>
         <div styleName="jobs__item" onClick={this.toggleDescription}>
           <h3 styleName="jobs__title">{job.role}</h3>
-          <p>{job.company}</p>
-          <p>{`${job.start} - ${job.end}`}</p>
+          <p styleName="jobs__company">{job.company}</p>
+          <p styleName="jobs__duration">{`${job.start} - ${job.end}`}</p>
         </div>
 
       </Fragment>

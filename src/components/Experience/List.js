@@ -2,8 +2,8 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 
-import ExperienceItem from './ExperienceItem';
-import styles from '../styles/experience.scss';
+import ExperienceItem from './Item';
+import styles from './experience.scss';
 
 class ExperienceList extends React.Component {
   render() {

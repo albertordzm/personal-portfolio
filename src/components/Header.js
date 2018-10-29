@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
-import styles from '../styles/header.scss';
+import styles from './header.scss';
 
 const getNavigationItemStyle = (activeItem, currentItem) => activeItem === currentItem ? 'navigation__item--active' : 'navigation__item';
 
