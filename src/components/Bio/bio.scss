@@ -1,0 +1,12 @@
+.bio {
+  composes: section from '../app.scss';
+}
+
+.bio__title {
+  composes: subtitle from '../app.scss';
+}
+
+.bio__body {
+  width: 50%;
+  line-height: 2;
+}

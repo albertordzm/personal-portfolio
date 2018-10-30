@@ -1,3 +1,11 @@
+.experience {
+  composes: section from '../app.scss';
+}
+
+.experience__title {
+  composes: subtitle from '../app.scss';
+}
+
 .jobs {
   composes: section from '../app.scss';
 }

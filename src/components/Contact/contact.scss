@@ -1,0 +1,7 @@
+.contact {
+  composes: section from '../app.scss';
+}
+
+.contact__title {
+  composes: subtitle from '../app.scss';
+}
