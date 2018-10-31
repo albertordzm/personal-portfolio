@@ -1,4 +1,12 @@
 .skills {
+  composes: section from '../app.scss';
+}
+
+.skills__title {
+  composes: subtitle from '../app.scss';
+}
+
+.skills__list {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
