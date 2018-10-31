@@ -1,0 +1,8 @@
+.home {
+  composes: section from '../app.scss';
+}
+
+.home__title {
+  margin: 0 auto;
+  font-size: 2rem;
+}

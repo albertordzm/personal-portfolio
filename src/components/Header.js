@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import styles from './header.scss';
@@ -19,33 +20,31 @@ const Header = (props) => {
   return (
     <header styleName={headerStyle}>
       <nav styleName="navigation">
-        <a styleName={navigationItemStyles.home} onClick={() => { updateActiveItem('home'); }}
-          href="#">
+        <NavLink styleName={navigationItemStyles.home} onClick={() => { updateActiveItem('home'); }}
+          to="/">
           HOME
-        </a>
-        <a styleName={navigationItemStyles.bio} onClick={() => { updateActiveItem('bio'); }}
-          href="#bio">
+        </NavLink>
+        <NavLink styleName={navigationItemStyles.bio} onClick={() => { updateActiveItem('bio'); }}
+          to="/bio">
           BIO
-        </a>
-        <a styleName={navigationItemStyles.skills} onClick={() => { updateActiveItem('skills'); }}
-          href="#skills">
+        </NavLink>
+        <NavLink styleName={navigationItemStyles.skills} onClick={() => { updateActiveItem('skills'); }} to="/skills">
           SKILLS
-        </a>
-        <a styleName={navigationItemStyles.exp} onClick={() => { updateActiveItem('exp'); }}
-          href="#exp">
+        </NavLink>
+        <NavLink styleName={navigationItemStyles.exp} onClick={() => { updateActiveItem('exp'); }}
+          to="/experience">
           EXPERIENCE
-        </a>
-        <a styleName={navigationItemStyles.contact} onClick={() => { updateActiveItem('contact'); }}
-          href="#contact">
+        </NavLink>
+        <NavLink styleName={navigationItemStyles.contact} onClick={() => { updateActiveItem('contact'); }} to="/contact">
           CONTACT
-        </a>
+        </NavLink>
       </nav>
     </header>
   )
 };
 
 Header.propTypes = {
-  scrolling: PropTypes.bool.isRequired,
+  scrolling: PropTypes.bool,
   activeItem: PropTypes.string.isRequired
 };
 

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 
@@ -15,7 +15,7 @@ import SqlServerIcon from '../../icons/SqlServerIcon';
 class SkillList extends React.Component {
   render () {
     return (
-      <div styleName="skills">
+      <div styleName="skills__list">
         <div styleName="skills__section">
           <HtmlIcon />
           <CssIcon />
