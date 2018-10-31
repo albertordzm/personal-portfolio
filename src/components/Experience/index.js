@@ -18,10 +18,12 @@ class Experience extends React.Component {
   render () {
     let { experience, showJobDescription } = this.state;
 
-    <section id="exp" styleName="experience">
-      <h2 styleName="experience__title">Experience</h2>
-      <ExperienceList jobs={experience} showJobDescription={showJobDescription} />
-    </section>
+    return (
+      <section id="exp" styleName="experience">
+        <h2 styleName="experience__title">Experience</h2>
+        <ExperienceList jobs={experience} showJobDescription={showJobDescription} />
+      </section>
+    )
   }
 }
 
