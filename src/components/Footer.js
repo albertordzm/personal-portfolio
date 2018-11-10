@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './footer.scss';
+import './footer.scss';
 
 import GithubIcon from '../icons/GithubIcon';
 import LinkedInIcon from '../icons/LinkedInIcon';
@@ -27,4 +26,4 @@ const Footer = (props) => {
   )
 }
 
-export default CSSModules(Footer, styles);
+export default Footer;

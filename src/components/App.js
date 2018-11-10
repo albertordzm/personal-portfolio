@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import CSSModules from 'react-css-modules';
-import styles from './app.scss';
+import './app.scss';
 
 import Footer from './Footer';
 import Header from './Header';
@@ -58,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default CSSModules(App, styles)
+export default App

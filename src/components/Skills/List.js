@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
+import './skills.scss';
 
-import styles from './skills.scss';
 import CssIcon from '../../icons/CssIcon';
 import CSharpIcon from '../../icons/CSharpIcon';
 import DotNetIcon from '../../icons/DotNetIcon';
@@ -34,4 +33,4 @@ class SkillList extends React.Component {
   }
 }
 
-export default CSSModules(SkillList, styles);
+export default SkillList;

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './home.scss';
+import './home.scss';
 
 const Home = (props) => {
   return (
@@ -10,6 +9,6 @@ const Home = (props) => {
       <h2>Software Developer</h2>
     </section>
   )
-}
+};
 
-export default CSSModules(Home, styles)
+export default Home;

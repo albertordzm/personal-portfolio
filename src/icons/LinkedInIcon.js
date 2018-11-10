@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './icons.scss';
+
+import './icons.scss';
 
 const LinkedInIcon = (props) => {
   return (
@@ -12,4 +12,4 @@ const LinkedInIcon = (props) => {
   )
 };
 
-export default CSSModules(LinkedInIcon, styles);
+export default LinkedInIcon;

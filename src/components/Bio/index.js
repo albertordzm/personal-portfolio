@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './bio.scss';
+import './bio.scss';
 
 const Bio = (props) => {
   return (
@@ -24,4 +23,4 @@ const Bio = (props) => {
   )
 };
 
-export default CSSModules(Bio, styles);
+export default Bio;
