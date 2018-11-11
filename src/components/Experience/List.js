@@ -14,7 +14,7 @@ class ExperienceList extends React.Component {
         <div styleName="jobs__list">
           {jobs.map((job, index) => <ExperienceItem key={index} job={job} />)}
         </div>
-        <div styleName={descriptionStyle}>
+        <div styleName="jobs__description--hide">
           {jobDescription}
         </div>
       </>

@@ -28,15 +28,7 @@ module.exports = merge(common, {
         use: [
           'style-loader',
           {
-            loader: 'css-loader?importLoader=1&modules&localIdentName=[name]__[local]___[hash:base64:5]'
-          }, {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                require('autoprefixer'),
-              ],
-              sourceMap: true
-            }
+            loader: 'css-loader?importLoaders=1&modules&localIdentName=[name]__[local]___[hash:base64:5]'
           }, {
             loader: 'sass-loader'
           }

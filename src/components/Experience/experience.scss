@@ -1,13 +1,15 @@
+@import '../../common/mixins';
+
 .experience {
-  composes: section from '../app.scss';
+  composes: section from '../../common/app.scss';
 }
 
 .experience__title {
-  composes: subtitle from '../app.scss';
+  composes: subtitle from '../../common/app.scss';
 }
 
 .jobs {
-  composes: section from '../app.scss';
+  composes: section from '../../common/app.scss';
 }
 
 .jobs__list {
@@ -16,8 +18,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  height: 66%;
-  width: 50%;
+  height: 70%;
+  width: 75%;
+
+  @include tablet-up {
+    height: 300px;
+    width: 600px;
+  }
 }
 
 .jobs__item {
@@ -25,6 +32,7 @@
   flex-direction: column;
   margin: 4px 0;
   padding: 4px;
+  height: 75px;
   width: 200px;
   border: 1px solid darkgray;
   cursor: pointer;
@@ -34,15 +42,21 @@
     background-color: darkgray;
     color: white;
   }
+
+  @include tablet-up {
+    height: 100px;
+  }
 }
 
 .jobs__title {
   margin: 0;
+  font-size: 1.25em;
 }
 
 .jobs__company,
 .jobs__duration {
   margin: 4px 0;
+  font-size: 1.1em;
 }
 
 .jobs__description {
@@ -53,4 +67,8 @@
   &--show {
     display: flex;
   }
+}
+
+.jobs__description--hide {
+  display: none;
 }

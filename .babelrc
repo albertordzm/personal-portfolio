@@ -5,7 +5,7 @@
   ],
   "plugins": [
     [
-      "react-css-modules",
+      "babel-plugin-react-css-modules",
       {
         "filetypes": {
           ".scss": {

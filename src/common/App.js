@@ -7,11 +7,11 @@ import Footer from './Footer';
 import Header from './Header';
 
 import ExperienceData from '../data/Experience';
-import Bio from './Bio';
-import Contact from './Contact';
-import Experience from './Experience';
-import Index from './Home';
-import Skills from './Skills';
+import Bio from '../components/Bio';
+import Contact from '../components/Contact';
+import Experience from '../components/Experience';
+import Index from '../components/Home';
+import Skills from '../components/Skills';
 
 class App extends Component {
   constructor(props) {

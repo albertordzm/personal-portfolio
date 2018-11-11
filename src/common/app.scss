@@ -1,3 +1,5 @@
+@import 'mixins';
+
 html {
   scroll-behavior: smooth;
 }
@@ -21,12 +23,10 @@ body {
   border-bottom: 1px solid black;
 }
 
-.section--skills {
-  @extend .section;
-
-  justify-content: space-around;
-}
-
 .subtitle {
-  font-size: 2rem;
+  font-size: 1.5em;
+
+  @include tablet-up {
+    font-size: 2.5rem;
+  }
 }
