@@ -1,7 +1,7 @@
 .contact {
-  composes: section from '../app.scss';
+  composes: section from '../../common/app.scss';
 }
 
 .contact__title {
-  composes: subtitle from '../app.scss';
+  composes: subtitle from '../../common/app.scss';
 }

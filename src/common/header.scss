@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .header {
   display: flex;
   justify-content: center;
@@ -45,6 +47,10 @@
   &:hover {
     color: darkgray;
     box-shadow:  0 1px 0 0 white inset, 0 -2px 0 0 darkgray inset;
+  }
+
+  @include tablet-up {
+    font-size: 1.15em;
   }
 }
 

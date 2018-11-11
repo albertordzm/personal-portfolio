@@ -1,0 +1,21 @@
+// Media queries mixins (from https://davidwalsh.name/write-media-queries-sass)
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './icons.scss';
+
+import './icons.scss';
 
 const SqlServerIcon = (props) => {
   return (
@@ -28,4 +28,4 @@ const SqlServerIcon = (props) => {
   )
 };
 
-export default CSSModules(SqlServerIcon, styles);
+export default SqlServerIcon;

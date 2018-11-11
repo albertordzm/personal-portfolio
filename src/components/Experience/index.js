@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './experience.scss';
+import './experience.scss';
 
 import ExperienceList from './List';
 import ExperienceData from '../../data/Experience';
@@ -27,4 +26,4 @@ class Experience extends React.Component {
   }
 }
 
-export default CSSModules(Experience, styles);
+export default Experience;

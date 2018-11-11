@@ -1,9 +1,11 @@
+@import '../../common/mixins';
+
 .skills {
-  composes: section from '../app.scss';
+  composes: section from '../../common/app.scss';
 }
 
 .skills__title {
-  composes: subtitle from '../app.scss';
+  composes: subtitle from '../../common/app.scss';
 }
 
 .skills__list {
@@ -12,7 +14,11 @@
   flex-direction: column;
   align-items: center;
   height: 50%;
-  width: 50%;
+  width: 75%;
+
+  @include tablet-up {
+    width: 50%;
+  }
 }
 
 .skills__section {

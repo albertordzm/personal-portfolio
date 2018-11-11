@@ -1,12 +1,27 @@
+@import '../../common/mixins';
+
 .bio {
-  composes: section from '../app.scss';
+  composes: section from '../../common/app.scss';
 }
 
 .bio__title {
-  composes: subtitle from '../app.scss';
+  composes: subtitle from '../../common/app.scss';
 }
 
 .bio__body {
-  width: 50%;
+  width: 75%;
   line-height: 2;
+  font-size: 1em;
+
+  @include tablet-only {
+    font-size: 1.15em;
+  }
+
+  @include tablet-up {
+    width: 50%;
+  }
+
+  @include desktop {
+    font-size: 1.5em;
+  }
 }

@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-
-import styles from './experience.scss';
+import './experience.scss';
 
 class ExperienceItem extends React.Component {
   constructor(props) {
@@ -40,4 +38,4 @@ ExperienceItem.propTypes = {
   job: PropTypes.object.isRequired
 };
 
-export default CSSModules(ExperienceItem, styles);
+export default ExperienceItem;

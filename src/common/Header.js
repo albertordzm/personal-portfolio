@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './header.scss';
+import './header.scss';
 
 const getNavigationItemStyle = (activeItem, currentItem) => activeItem === currentItem ? 'navigation__item--active' : 'navigation__item';
 
@@ -48,4 +47,4 @@ Header.propTypes = {
   activeItem: PropTypes.string.isRequired
 };
 
-export default CSSModules(Header, styles);
+export default Header;

@@ -1,8 +1,23 @@
+@import '../../common/mixins';
+
 .home {
-  composes: section from '../app.scss';
+  composes: section from '../../common/app.scss';
 }
 
 .home__title {
   margin: 0 auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
+
+  @include tablet-up {
+    font-size: 2rem;
+  }
+}
+
+.home__subtitle {
+  margin: 8px auto;
+  font-size: 1.25rem;
+
+  @include tablet-up {
+    font-size: 1.5rem;
+  }
 }

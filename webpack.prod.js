@@ -2,6 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -13,6 +14,13 @@ module.exports = merge(common, {
   devtool: 'source-map',
   mode: 'production',
   plugins: [
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }],
+      },
+      canPrint: true
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
     }),
@@ -35,16 +43,7 @@ module.exports = merge(common, {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader?importLoader=1&modules&localIdentName=[name]__[local]___[hash:base64:5]'
-          }, {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                require('cssnano'),
-                require('autoprefixer'),
-              ],
-              sourceMap: true
-            }
+            loader: 'css-loader?importLoaders=1&modules&localIdentName=[name]__[local]___[hash:base64:5]'
           }, {
             loader: 'sass-loader'
           }

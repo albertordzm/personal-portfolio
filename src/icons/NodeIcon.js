@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './icons.scss';
+
+import './icons.scss';
 
 const NodeIcon = (props) => {
   return (
@@ -11,4 +11,4 @@ const NodeIcon = (props) => {
   )
 };
 
-export default CSSModules(NodeIcon, styles);
+export default NodeIcon;

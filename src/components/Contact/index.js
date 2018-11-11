@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './contact.scss';
+import './contact.scss';
 
 const Contact = () => {
   return (
@@ -11,4 +10,4 @@ const Contact = () => {
   )
 }
 
-export default CSSModules(Contact, styles);
+export default Contact;

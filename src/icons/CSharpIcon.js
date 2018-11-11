@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
-import styles from './icons.scss';
+import './icons.scss';
 
 const CSharpIcon = (props) => {
   return (
@@ -18,4 +17,4 @@ const CSharpIcon = (props) => {
   )
 };
 
-export default CSSModules(CSharpIcon, styles);
+export default CSharpIcon;

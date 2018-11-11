@@ -1,9 +1,8 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
+import './experience.scss';
 
 import ExperienceItem from './Item';
-import styles from './experience.scss';
 
 class ExperienceList extends React.Component {
   render() {
@@ -15,7 +14,7 @@ class ExperienceList extends React.Component {
         <div styleName="jobs__list">
           {jobs.map((job, index) => <ExperienceItem key={index} job={job} />)}
         </div>
-        <div styleName={descriptionStyle}>
+        <div styleName="jobs__description--hide">
           {jobDescription}
         </div>
       </>
@@ -29,4 +28,4 @@ ExperienceList.propTypes = {
   showJobDescription: PropTypes.bool.isRequired
 };
 
-export default CSSModules(ExperienceList, styles);
+export default ExperienceList;
