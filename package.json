@@ -25,7 +25,7 @@
   "homepage": "https://github.com/albertordzm/personal-portfolio#readme",
   "dependencies": {
     "babel-plugin-react-css-modules": "^3.4.2",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "node-sass": "^4.9.4",
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
